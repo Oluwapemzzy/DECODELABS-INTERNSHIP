@@ -112,7 +112,7 @@ The following fields were validated:
 - Unit Price
 - Items in Cart
 - Total Price
-- 
+  
 Checks included identifying negative values, unexpected zeros, and other inconsistencies that could impact analytical accuracy.
 
 **8. Final Quality Assurance:** A final review of the dataset was conducted to confirm that:
@@ -122,6 +122,10 @@ Checks included identifying negative values, unexpected zeros, and other inconsi
 - Text values were standardized.
 - Numeric values had been validated.
 - The dataset was clean, accurate, and ready for analysis.
+
+#### CONCLUSION
+
+The data cleaning process successfully transformed the raw dataset into a structured and reliable dataset suitable for analysis. By validating data integrity, correcting formatting issues, standardizing categorical values, and verifying calculations, the dataset now provides a dependable foundation for generating accurate insights and supporting data-driven decision-making.
 
 
 
