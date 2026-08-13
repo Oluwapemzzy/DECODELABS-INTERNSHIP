@@ -1,7 +1,9 @@
 # DECODELABS-INTERNSHIP
 A month internship program that ran from 15th July 2026 to 15th August.
 
-
+# OUTLINE
+- [PROJECT 1](#PROJECT-1---DATA-CLEANING-USING-EXCEL-by-Oluwapelumi-Adedolapo-Oluwalana)
+- 
 ## PROJECT 1 - DATA CLEANING USING EXCEL by Oluwapelumi Adedolapo Oluwalana
 
 ### Project Overview
@@ -127,10 +129,18 @@ Checks included identifying negative values, unexpected zeros, and other inconsi
 
 The data cleaning process successfully transformed the raw dataset into a structured and reliable dataset suitable for analysis. By validating data integrity, correcting formatting issues, standardizing categorical values, and verifying calculations, the dataset now provides a dependable foundation for generating accurate insights and supporting data-driven decision-making.
 
+---
 
+## PROJECT 2 - EXPLORATORY DATA ANALYSIS (EDA) USING EXCEL 
 
+Rather than simply summarizing the dataset, the exploratory analysis was designed to answer specific business questions.
+Each analysis focuses on a practical business objective and concludes with actionable recommendations.
 
+**1. Product Sales Analysis**
 
+*Business Question:* Which products generated the highest customer demand?
 
+Instead of measuring performance using revenue alone, I first analyzed sales volume to understand customer purchasing behavior.
+Sales volume often reveals demand patterns that revenue cannot, particularly when products vary in price.
 
-
+/#/*Xxx
