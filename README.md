@@ -2,8 +2,9 @@
 A month internship program that ran from 15th July 2026 to 15th August.
 
 # OUTLINE
-- [PROJECT 1] (#PROJECT-1---DATA-CLEANING-USING-EXCEL-by-Oluwapelumi-Adedolapo-Oluwalana)
-- [PROJECT 2] (#PROJECT-2---EXPLORATORY-DATA-ANALYSIS-(EDA)-USING-EXCEL)
+- [PROJECT 1](#PROJECT-1---DATA-CLEANING-USING-EXCEL-by-Oluwapelumi-Adedolapo-Oluwalana)
+- [PROJECT 2](#PROJECT-2---EXPLORATORY-DATA-ANALYSIS-(EDA)-USING-EXCEL)
+- 
 
    
 ## PROJECT 1 - DATA CLEANING USING EXCEL by Oluwapelumi Adedolapo Oluwalana
@@ -145,4 +146,351 @@ Each analysis focuses on a practical business objective and concludes with actio
 Instead of measuring performance using revenue alone, I first analyzed sales volume to understand customer purchasing behavior.
 Sales volume often reveals demand patterns that revenue cannot, particularly when products vary in price.
 
-/#/*Xxx
+| Product | Quantity Sold |
+|---------| --------------|
+| Chair | 562 |
+| Printer | 542 |
+| Laptop | 535 |
+| Desk | 508 |
+| Tablet | 497 |
+| Monitor | 480 |
+| Phone | 411 |
+
+**Validation**
+
+Before accepting the Pivot Table results, I manually filtered the raw dataset and recalculated product quantities to verify the totals.
+During this process, I initially observed discrepancies between my manual calculations and the Pivot Table. After reviewing the calculations, I discovered that the differences were caused by incorrect calculator inputs rather than errors in the dataset.
+This additional validation strengthened confidence in the analytical results.
+
+**Insights**
+
+- Chairs recorded the highest sales volume, indicating strong customer demand.
+- Phones recorded the lowest quantity sold, suggesting comparatively weaker demand.
+
+Although Chairs led in unit sales, this analysis alone does not indicate revenue performance, making further analysis necessary.
+
+**Business Recommendation**
+
+Maintain adequate inventory levels for high-demand products while investigating factors contributing to the relatively lower demand for Phones.
+
+**2. Gross Sales vs Realized Revenue**
+
+This became the most important analytical decision in the project. Initially, I considered analyzing Total Price as revenue.
+However, after reviewing the Order Status field, I recognized that treating cancelled and returned orders as realized revenue would overstate business performance.
+
+To address this, I introduced two revenue metrics throughout the project:
+
+*Gross Sales :* Represents the total value of all recorded orders regardless of fulfillment status.
+*Realized Revenue:* Represents revenue generated only from successfully delivered orders.
+
+Separating these two metrics provides a more realistic measure of financial performance.
+
+**Gross Sales vs Realized Revenue**
+
+|Price |	Gross Sales |	Realized Revenue |
+|------| ------------|-------------------|
+| Chair	| 195620.11 |	31465.83 |
+| Printer |	195612.61 | 38054.73
+|Laptop | 192126.56 | 40714.43
+|Desk | 167459.93|	24225.78|
+|Tablet|	186568.95| 31794.52	|
+|Monitor |	175651.41|	35999.62	|
+|Phone |	151722.39| 	40345.41 |	
+
+**3. Order Status Analysis**
+
+*Business Question:* How effectively is the company converting customer orders into completed deliveries?
+
+**Objective**
+
+The objective of this analysis was to evaluate the efficiency of the order fulfillment process by examining the distribution of orders across different order statuses.
+Unlike sales analysis, which focuses on revenue generation, order status analysis measures operational performance. It helps identify potential inefficiencies within the fulfillment process that may negatively impact customer satisfaction and overall business profitability.
+
+**Methodology**
+
+A Pivot Table was created using the cleaned dataset with the following configuration:
+
+*Rows:* Order Status
+
+*Values:* Count of Order ID
+
+To provide additional business context, two operational KPIs were calculated:
+- Delivery Rate
+- Cancellation Rate
+
+The Delivery Rate was calculated as:
+
+**(Delivered Orders ÷ Total Orders) × 100**
+
+The Cancellation Rate was calculated as:
+
+**(Cancelled Orders ÷ Total Orders) × 100**
+
+Results
+
+| Order Status | Number of Orders|
+|--------------|-----------------|
+|Cancelled |	250 |
+| Returned|	247|
+|Pending|	237|
+| Shipped|	235|
+|Delivered|	231|
+|Total Orders	|1,200|
+
+🔑 Key Performance Indicators
+
+Delivery Rate: **19.25%**
+
+Cancellation Rate: **20.83%**
+
+**Analysis and Interpretation:**
+The analysis reveals that only 231 out of 1,200 orders were successfully delivered, resulting in a delivery rate of 19.25%.
+Conversely, 250 orders were cancelled, representing 20.83% of all transactions. This means that cancelled orders slightly exceeded successfully delivered orders.
+Additionally, 247 orders were returned, while 237 orders remained pending and 235 orders had been shipped but not yet marked as delivered.
+Rather than observing a sales problem, these findings point towards an operational challenge. A large proportion of customer orders failed to progress through the complete fulfillment cycle.
+The relatively even distribution across all order statuses also suggests that inefficiencies may exist throughout multiple stages of the order fulfillment process rather than at a single point.
+
+**Business Insights:**
+One of the most significant findings from this project is that high sales activity does not necessarily translate into successful business outcomes.
+Although the company generated substantial order activity, fewer than one in five orders reached the final delivery stage.
+This operational inefficiency directly explains the considerable gap observed between Gross Sales and Realized Revenue in the previous analysis.
+Improving delivery performance therefore represents one of the greatest opportunities for increasing realized revenue without necessarily increasing customer acquisition.
+
+**Business Recommendations:**
+Based on these findings, the following recommendations are proposed:
+- Investigate the primary causes of order cancellations and implement corrective measures.
+- Review logistics and delivery operations to improve order completion rates.
+- Monitor pending orders to reduce fulfillment delays.
+- Analyze returned orders to identify recurring product quality or customer satisfaction issues.
+- Introduce operational KPIs such as Delivery Rate, Return Rate, and Cancellation Rate into regular management reporting.
+
+**4. Payment Method Analysis**
+
+*Business Question:* Which payment methods are most preferred by customers?
+
+**Objective**
+The objective of this analysis was to understand customer payment preferences and determine whether any payment method significantly influences purchasing behaviour.
+Understanding payment preferences enables businesses to optimize payment options, improve customer convenience, and prioritize investments in digital payment infrastructure.
+
+**Methodology**
+A Pivot Table was created using:
+
+*Rows:* Payment Method
+*Values:* Count of Order ID
+
+The frequency of each payment method was then compared.
+
+**Results**
+|Payment   Method	| Number of Orders
+|------------------|-----------------|
+| Online	 |            258 |
+|Cash	  |             246 |
+| Credit Card	|         234 |
+| Debit Card |          232 |
+| Gift Card    |        230 |
+|Total	     |         1,200 |
+
+**Analysis and Interpretation:**
+Customer payment preferences were relatively balanced across all available payment methods.
+Online payments recorded the highest number of transactions (258 orders), while Gift Cards recorded the lowest (230 orders).
+However, the differences between payment methods were relatively small, suggesting that customers are comfortable using multiple payment options.
+No payment method demonstrated overwhelming dominance.
+This indicates that the company's payment ecosystem is well diversified and currently accommodates a wide range of customer preferences.
+
+**Business Insights:**
+The findings suggest that payment method is unlikely to be a major barrier to customer purchases.
+The popularity of Online payments reflects the growing adoption of digital payment solutions and highlights the importance of maintaining reliable electronic payment systems.
+At the same time, the continued use of Cash, Debit Cards, Credit Cards, and Gift Cards demonstrates the value of providing multiple payment alternatives.
+
+**Business Recommendations:**
+- Continue supporting multiple payment options to accommodate diverse customer preferences.
+- Invest in improving the speed, reliability, and security of online payment systems.
+- Consider offering promotional incentives for digital payment methods where appropriate.
+- Periodically review payment trends to identify changes in customer behaviour.
+
+
+**5. Referral Source Performance Analysis**
+
+*Business Question:* Which marketing channels generate the greatest business value?
+
+**Objective:**
+The objective of this analysis was to evaluate the effectiveness of each referral source in terms of:
+- Customer acquisition
+- Gross Sales
+- Realized Revenue
+
+Rather than relying on a single performance metric, multiple measures were analyzed to provide a more comprehensive assessment of marketing effectiveness.
+
+**Methodology:**
+Three separate Pivot Tables were developed.
+
+*Analysis 1:*
+Orders by Referral Source
+**Rows:** Referral Source
+**Values:** Count of Order ID
+
+*Analysis 2:*
+Gross Sales by Referral Source
+*Rows:* Referral Source
+*Values:* Sum of Total Price
+
+*Analysis 3*
+Realized Revenue
+
+A filter was applied:
+Order Status = Delivered
+
+*Rows:*
+Referral Source
+
+*Values:*
+Sum of Total Price
+
+Comparing these three analyses enabled a deeper understanding of customer acquisition quality rather than simply acquisition quantity.
+
+**Results**
+
+*Orders*
+|Referral Source|	     Orders|
+|---------------|-------------|
+|Instagram|259|
+|Email |               	250|
+|Google	|              241|
+|Facebook	   |         228|
+|Referral	           | 222|
+
+*Gross Sales*
+|Referral Source	|      Gross Sales|
+|-----------------|-----------------|
+|Instagram	  |          $275,285.45|
+|Email|$261,808.55|
+|Google	       |       $250,441.48|
+|Facebook	   |         $250,410.90|
+|Referral	        |    $226,815.58|
+
+*Realized Revenue*
+|Referral Source	|      Realized Revenue|
+|-----------------|----------------------|
+|Email	   |               $64,553.52|
+|Facebook	          |    $52,149.38|
+|Instagram	        |      $51,299.56|
+|Google	        |        $41,406.25|
+|Referral	    |          $33,191.61|
+
+**Analysis and Interpretation:**
+Instagram generated the highest number of customer orders and the highest Gross Sales, making it the strongest acquisition channel based on initial transaction activity.
+However, a different picture emerged when the analysis focused on Realized Revenue.
+Email marketing generated the highest revenue from successfully delivered orders, outperforming Instagram despite acquiring fewer customers.
+
+This suggests that customers acquired through Email campaigns were more likely to complete the purchasing journey successfully, while a larger proportion of Instagram-generated sales did not ultimately convert into realized revenue.
+The Referral channel consistently recorded the lowest performance across all three measures, indicating comparatively lower marketing effectiveness.
+
+**Business Insights:**
+One of the most valuable findings from this analysis is that the channel generating the highest number of orders is not necessarily the channel generating the greatest business value.
+If management relied solely on customer acquisition numbers, Instagram would appear to be the strongest marketing channel.
+However, incorporating Realized Revenue into the analysis reveals that Email marketing delivers higher-quality conversions.
+This reinforces the importance of evaluating marketing performance using both acquisition and fulfillment outcomes rather than acquisition metrics alone.
+
+**Business Recommendations**
+- Continue leveraging Instagram as a high-performing customer acquisition channel while investigating the reasons for lower realized revenue.
+- Study the characteristics of Email campaigns to understand why they achieve higher delivery completion and revenue realization.
+- Reassess investment in the Referral channel and identify opportunities to improve its performance.
+- Incorporate Realized Revenue into marketing performance reporting to measure campaign effectiveness more accurately.
+
+**6. Monthly Sales Trend Analysis**
+
+*Business Question:* How did sales performance change over time during the reporting period?
+
+**Objective:**
+The objective of this analysis was to identify sales trends over time, highlight periods of exceptional performance, and provide insights that could support future forecasting and strategic planning.
+
+**Methodology**
+A Pivot Table was created using:
+
+*Rows:* Date (Grouped by Year and Month)
+*Values:* Sum of Total Price
+
+The Date field was grouped into Years and Months to improve trend visualization and facilitate comparisons across reporting periods.
+
+During the analysis, I deliberately considered the completeness of the data before drawing conclusions. Since the dataset only contains transactions from January to June 2025, I avoided making direct year-over-year comparisons between 2025 and the previous full calendar years.
+
+**Results**
+|Annual |  Gross Sales|
+|--------|-------------|
+|Year	 |  Gross Sales|
+|2023	|   $552,643.24|
+|2024	 |  $480,235.87|
+|2025  |   $231,882.85|
+**(Jan-Jun)**	
+
+The highest monthly sales occurred in June 2024, with $68,068.54, while the lowest monthly sales were recorded in April 2023, with $27,751.71.
+
+**Analysis and Interpretation:**
+Sales fluctuated throughout the reporting period, with noticeable month-to-month variations rather than a consistent upward or downward trend.
+The strong performance recorded in June 2024 may indicate the influence of seasonal demand, promotional campaigns, or other business activities that drove increased customer purchases during that period.
+Although 2025 recorded lower cumulative sales than previous years, this observation should be interpreted with caution because the dataset covers only the first six months of the year. Comparing this partial-year data with complete annual figures would produce misleading conclusions.
+By acknowledging this limitation, the analysis remains objective and avoids overstating trends that are not fully supported by the available data.
+
+**Business Insights:**
+The analysis demonstrates the importance of considering data completeness before making strategic comparisons. Rather than concluding that sales declined in 2025, the findings indicate that additional data is required before evaluating the year's overall performance.
+The peak observed in June 2024 presents an opportunity for further investigation to determine which business activities contributed to the increase in sales. Understanding these factors may help replicate similar performance in future periods.
+
+**Business Recommendations:**
+- Investigate the business initiatives, promotional campaigns, or market conditions that contributed to the strong performance in June 2024.
+- Continue monitoring monthly sales trends to support demand forecasting and inventory planning.
+- Avoid making annual performance comparisons using incomplete datasets.
+- Incorporate rolling monthly trend analysis into future reporting to provide a more timely view of business performance.
+
+
+#### OVERALL EDA SUMMARY
+The exploratory data analysis extended beyond descriptive reporting by examining customer demand, operational efficiency, marketing performance, and revenue realization from multiple perspectives
+A recurring theme throughout the analysis was the distinction between Gross Sales and Realized Revenue, which provided a more accurate representation of business performance than total sales alone.
+
+The findings revealed that strong customer acquisition and high order volumes do not necessarily translate into realized business value.
+Operational factors such as cancellations, returns, and delivery completion significantly influenced the organization's ability to convert sales into revenue.
+By combining product analysis, order fulfillment metrics, marketing channel evaluation, payment preferences, and sales trends,
+the analysis offers a holistic view of business performance and highlights actionable opportunities to improve operational efficiency, marketing effectiveness, and revenue realization.
+
+---
+## DASHBOARD
+
+#### Dashboard Overview
+
+Following the completion of the exploratory data analysis, I developed an interactive dashboard to present the findings in a concise and visually intuitive format. The dashboard was designed to transform detailed analytical outputs into an executive-level reporting tool that enables stakeholders to monitor business performance at a glance.
+
+Rather than displaying large volumes of raw data, the dashboard consolidates key performance indicators (KPIs), charts, and trend analyses into a single interface. This allows decision-makers to quickly identify patterns, evaluate performance, and make informed business decisions without navigating multiple worksheets.
+
+The dashboard was built using Microsoft Excel/WPS Spreadsheet and leverages Pivot Tables, Pivot Charts, linked KPI cards, and dynamic references to ensure that updates to the underlying dataset are reflected automatically throughout the dashboard.
+
+#### Dashboard Objectives
+The dashboard was designed to achieve the following objectives:
+- Provide a high-level overview of business performance.
+- Present key performance indicators in an easily interpretable format.
+- Visualize sales trends and product performance.
+- Compare Gross Sales with Realized Revenue.
+- Monitor operational performance using order status metrics.
+- Evaluate marketing channel effectiveness.
+- Support data-driven decision-making through interactive visual reporting.
+
+#### Dashboard Components
+
+The dashboard consists of six KPI cards and six supporting visualizations.
+
+**Key Performance Indicators (KPIs):**
+
+To provide an immediate overview of business performance, six KPI cards were developed.
+
+*Total Orders:*
+
+Displays the total number of customer orders recorded during the reporting period.
+
+Value: 1,200 Orders
+
+This KPI represents overall business activity and provides context for interpreting the remaining performance metrics.
+
+
+
+
+
+
+
