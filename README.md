@@ -988,4 +988,8 @@ The most important findings from this stage were:
 - Cash had the highest return rate among payment methods at 23.17%.
 - Instagram generated the highest referral-source revenue at ₦275,285.45.
 
+
+### PROJECT 4 - POWERBI
+
+
 This completed my SQL analysis phase.
