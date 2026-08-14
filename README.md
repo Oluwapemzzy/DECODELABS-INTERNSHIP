@@ -4,7 +4,7 @@ A month internship program that ran from 15th July 2026 to 15th August.
 # OUTLINE
 - [PROJECT 1](#PROJECT-1---DATA-CLEANING-USING-EXCEL-by-Oluwapelumi-Adedolapo-Oluwalana)
 - [PROJECT 2](#PROJECT-2---EXPLORATORY-DATA-ANALYSIS-(EDA)-USING-EXCEL)
-- 
+- [PROJECT 3](#-PROJECT-3---E---COMMERCE-SALES-ANALYSIS-USING-SQL)
 
    
 ## PROJECT 1 - DATA CLEANING USING EXCEL by Oluwapelumi Adedolapo Oluwalana
