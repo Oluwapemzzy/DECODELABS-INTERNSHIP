@@ -488,8 +488,124 @@ Value: 1,200 Orders
 
 This KPI represents overall business activity and provides context for interpreting the remaining performance metrics.
 
+*Unique Customers*
+
+Displays the number of distinct customers who placed orders.
+
+Value: 1,189 Customers
+
+This metric differentiates total transactions from individual customer activity and helps assess customer reach.
 
 
+*Gross Sales*
+
+Displays the total monetary value of all recorded transactions.
+
+Value: $1,264,761.96
+
+Gross Sales represent the potential revenue generated before considering order completion or fulfillment status.
+
+
+*Realized Revenue*
+
+Displays revenue generated exclusively from successfully delivered orders.
+
+Value: $242,600.32
+
+Unlike Gross Sales, this KPI reflects actual revenue earned and provides a more realistic measure of business performance.
+
+*Delivery Rate*
+
+Displays the percentage of total orders that were successfully delivered.
+
+Value: 19.25%
+
+This KPI measures fulfillment efficiency and serves as an operational performance indicator.
+
+*Cancellation Rate*
+
+Displays the percentage of orders that were cancelled.
+
+Value: 20.83%
+
+Monitoring cancellations enables management to identify potential operational or customer experience challenges.
+
+
+Dashboard Visualizations
+The dashboard includes six visualizations designed to complement the KPI cards.
+
+A. Product Sales Analysis
+A horizontal bar chart displays the total quantity sold for each product.
+This visualization quickly identifies the highest and lowest performing products based on customer demand.
+The chart highlights Chairs as the highest-selling product and Phones as the lowest-selling product during the reporting period.
+
+B. Gross Sales vs. Realized Revenue by Product
+A clustered bar chart compares Gross Sales against Realized Revenue for each product category.
+This visualization was intentionally included because Gross Sales alone can overstate business performance.
+Comparing the two metrics reveals the extent to which operational challenges, such as cancellations, returns, and incomplete deliveries, reduce realized business income.
+This chart provides one of the most important insights within the dashboard.
+
+C. Order Status Distribution
+A column chart illustrates the number of orders across each order status.
+The visualization highlights the imbalance between completed deliveries and other order outcomes, including cancellations, returns, pending orders, and shipped orders.
+This chart enables stakeholders to monitor operational efficiency and identify fulfillment bottlenecks.
+
+D. Payment Method Distribution
+A bar chart summarizes customer payment preferences across the available payment methods.
+The visualization demonstrates that customer preferences are relatively balanced, with Online payments recording the highest usage.
+This insight supports decisions relating to payment infrastructure and customer convenience.
+
+E. Referral Source Performance
+A column chart compares marketing channels based on either order volume or realized revenue.
+The visualization demonstrates that although Instagram generated the highest number of customer orders, Email produced the highest Realized Revenue.
+This finding emphasizes the importance of evaluating marketing effectiveness using revenue quality rather than customer acquisition volume alone.
+
+**F. Monthly Sales Trend**
+
+A line chart illustrates monthly sales performance across the reporting period.
+Grouping transactions by Year and Month allows stakeholders to identify sales patterns, seasonal fluctuations, and periods of exceptional performance.
+The chart also provides valuable input for forecasting future sales and planning marketing campaigns.
+
+<img width="396" height="781" alt="image" src="https://github.com/user-attachments/assets/47855ca6-92c6-4302-a5fe-78a7f2d42ce4" />
+
+
+**Dashboard Design Considerations**
+
+Several design principles were applied during dashboard development to improve readability and user experience.
+
+These include:
+- A clean and uncluttered layout that prioritizes essential business information.
+- Consistent color schemes to improve visual recognition.
+- Clearly labelled charts and KPI cards for quick interpretation.
+- Logical placement of dashboard components, beginning with summary KPIs followed by detailed analytical visualizations.
+- Dynamic links between Pivot Tables and dashboard elements to ensure automatic updates whenever the source data changes.
+
+These design decisions enhance usability while maintaining a professional appearance suitable for executive reporting.
+
+**Business Value of the Dashboard**
+
+The dashboard transforms raw transactional data into an interactive decision-support tool.
+Rather than manually reviewing thousands of transaction records, stakeholders can immediately identify:
+
+**Overall sales performance.**
+
+- Customer purchasing patterns.
+- Product demand.
+- Marketing channel effectiveness.
+- Operational inefficiencies.
+- Revenue realization.
+- Monthly sales trends.
+
+The inclusion of both Gross Sales and Realized Revenue provides a more comprehensive assessment of business performance
+and prevents misleading interpretations based solely on total transaction value.
+
+
+#### CONCLUSION
+The dashboard serves as the final output of the analytics process by consolidating key findings from the exploratory data analysis into a single interactive interface.
+It enables stakeholders to monitor performance, identify emerging trends, and make informed business decisions based on reliable and well-presented data.
+By combining dynamic KPI cards with carefully selected visualizations, the dashboard provides a clear and comprehensive overview of the organization's sales, marketing, customer behaviour, and operational performance.
+The emphasis on Realized Revenue alongside Gross Sales further strengthens the dashboard's value by presenting a more accurate representation of financial outcomes, 
+ensuring that strategic decisions are grounded in meaningful business metrics rather than transactional volume alone.
 
 
 
