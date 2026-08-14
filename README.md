@@ -958,7 +958,34 @@ SELECT
     ) AS Return_Rate
 FROM decodelabs_project3.`oluwapelumi sql_decodelabs`
 GROUP BY Product
-```
 ORDER BY Total_Revenue DESC;
+```
 
 This became my main product-performance analysis because it allowed me to evaluate revenue, order volume, average order value, cancellation risk, and return risk together.
+
+#### SQL Learning Outcome
+
+Through this stage of the project, I moved from having little practical knowledge of SQL to being able to write queries that answer real business questions.
+
+I learned that SQL is not just about retrieving data. I can use it to filter, summarize, compare, calculate, rank, and investigate patterns in business data.
+
+I also learned the importance of choosing the right metric. For example, simply identifying the product with the most cancelled orders could be misleading because products have different order volumes. Calculating the cancellation rate provided a fairer comparison.
+
+#### SQL Section Conclusion
+
+My SQL analysis provided additional evidence for the findings from my Excel analysis while also allowing me to investigate customer behaviour, payment methods, and product-level operational risks in greater detail.
+
+The most important findings from this stage were:
+
+- I identified 1,189 unique customers from 1,200 orders.
+- I found 11 customers with repeat purchases.
+- The highest individual order was ₦3,456.40.
+- Chair generated the highest product revenue at ₦195,620.11.
+- Chair had the highest cancellation rate at 25.28%.
+- Tablet had the highest return rate at 24.02%.
+- Laptop had the highest average order value at ₦1,110.56.
+- Credit Card had the highest cancellation rate among payment methods at 23.08%.
+- Cash had the highest return rate among payment methods at 23.17%.
+- Instagram generated the highest referral-source revenue at ₦275,285.45.
+
+This completed my SQL analysis phase.
