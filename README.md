@@ -531,34 +531,54 @@ Value: 20.83%
 Monitoring cancellations enables management to identify potential operational or customer experience challenges.
 
 
-Dashboard Visualizations
+#### Dashboard Visualizations
 The dashboard includes six visualizations designed to complement the KPI cards.
 
-A. Product Sales Analysis
+**A. Product Sales Analysis**
+
 A horizontal bar chart displays the total quantity sold for each product.
 This visualization quickly identifies the highest and lowest performing products based on customer demand.
 The chart highlights Chairs as the highest-selling product and Phones as the lowest-selling product during the reporting period.
 
-B. Gross Sales vs. Realized Revenue by Product
+<img width="361" height="289" alt="image" src="https://github.com/user-attachments/assets/1cd9dcd4-1a37-414d-9e26-8320458e4b78" />
+
+
+**B. Gross Sales vs. Realized Revenue by Product**
+
 A clustered bar chart compares Gross Sales against Realized Revenue for each product category.
 This visualization was intentionally included because Gross Sales alone can overstate business performance.
 Comparing the two metrics reveals the extent to which operational challenges, such as cancellations, returns, and incomplete deliveries, reduce realized business income.
 This chart provides one of the most important insights within the dashboard.
 
-C. Order Status Distribution
+<img width="403" height="289" alt="image" src="https://github.com/user-attachments/assets/e982198a-b476-41a9-8250-3a6c1a4ed597" />
+
+
+**C. Order Status Distribution**
+
 A column chart illustrates the number of orders across each order status.
 The visualization highlights the imbalance between completed deliveries and other order outcomes, including cancellations, returns, pending orders, and shipped orders.
 This chart enables stakeholders to monitor operational efficiency and identify fulfillment bottlenecks.
 
-D. Payment Method Distribution
+<img width="376" height="289" alt="image" src="https://github.com/user-attachments/assets/dd78bce8-bc5c-4acd-b7aa-af7f77aa4d97" />
+
+
+**D. Payment Method Distribution**
+
 A bar chart summarizes customer payment preferences across the available payment methods.
 The visualization demonstrates that customer preferences are relatively balanced, with Online payments recording the highest usage.
 This insight supports decisions relating to payment infrastructure and customer convenience.
 
-E. Referral Source Performance
+<img width="613" height="289" alt="image" src="https://github.com/user-attachments/assets/c9f83550-a8cd-47f8-aa96-08a682502c49" />
+
+
+**E. Referral Source Performance**
+
 A column chart compares marketing channels based on either order volume or realized revenue.
 The visualization demonstrates that although Instagram generated the highest number of customer orders, Email produced the highest Realized Revenue.
 This finding emphasizes the importance of evaluating marketing effectiveness using revenue quality rather than customer acquisition volume alone.
+
+<img width="561" height="289" alt="image" src="https://github.com/user-attachments/assets/99eda647-b282-4177-a1ce-77c3904a0f1b" />
+
 
 **F. Monthly Sales Trend**
 
@@ -566,7 +586,8 @@ A line chart illustrates monthly sales performance across the reporting period.
 Grouping transactions by Year and Month allows stakeholders to identify sales patterns, seasonal fluctuations, and periods of exceptional performance.
 The chart also provides valuable input for forecasting future sales and planning marketing campaigns.
 
-<img width="396" height="781" alt="image" src="https://github.com/user-attachments/assets/47855ca6-92c6-4302-a5fe-78a7f2d42ce4" />
+<img width="1197" height="356" alt="image" src="https://github.com/user-attachments/assets/d8c241c3-0251-484f-bbd6-5b3ab279ed2b" />
+
 
 
 **Dashboard Design Considerations**
