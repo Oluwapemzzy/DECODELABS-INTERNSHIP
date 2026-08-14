@@ -629,5 +629,336 @@ The emphasis on Realized Revenue alongside Gross Sales further strengthens the d
 ensuring that strategic decisions are grounded in meaningful business metrics rather than transactional volume alone.
 
 
+## PROJECT 3 - E-COMMERCE SALES ANALYSIS USING SQL
+
+After completing my initial analysis in Excel, I used MySQL Workbench to perform additional business-focused analysis.
+
+I used SQL to validate and extend some of the findings from my Excel analysis.
+
+Some of the main SQL concepts I applied included:
+
+- SELECT
+- COUNT()
+- COUNT(DISTINCT)
+- SUM()
+- MAX()
+- ROUND()
+- CASE WHEN
+- WHERE
+- GROUP BY
+- HAVING
+- ORDER BY
+- YEAR()
+- MONTH()
+- MONTHNAME()
+
+I also learned how to combine multiple SQL functions to calculate business metrics rather than simply retrieve individual records.
+
+#### Key SQL Findings
+
+**Unique Customers**
+
+I used COUNT(DISTINCT Customer_ID) to determine the number of unique customers.
+
+I found:
+
+1,189 unique customers
+
+from 1,200 orders.
+
+**Repeat Customers**
+
+I used GROUP BY Customer_ID together with HAVING COUNT(*) > 1 to identify customers who had placed multiple orders.
+
+I found 11 customers with repeat orders, with each of these customers placing two orders.
+
+This indicated relatively limited repeat purchasing within the dataset.
+
+#### Highest-Value Order
+
+I used the **MAX() function** on Total_Price to identify the highest individual order value.
+
+The highest order was:
+
+**₦3,456.40**
+
+This helped me understand the upper end of individual transaction values in the dataset.
 
 
+#### Product Performance Analysis
+
+I created a combined SQL analysis to evaluate products using several metrics at once.
+
+|Product |	Revenue|	Orders |	AOV | Cancellation Rate |	Return Rate |
+|--------|---------|--------|------|------------------|--------------|
+|Chair|	₦195,620.11	|178|	₦1,098.99 |25.28% |	15.73%|
+|Printer |	₦195,612.61	|181	|₦1,080.73|	19.34%|	20.99%|
+|Laptop |	₦192,126.56	|173 |	₦1,110.56 | 20.23% |	22.54%|
+|Tablet |	₦186,568.95|	179 |	₦1,042.28|	18.99%	|24.02% |
+|Monitor|	₦175,651.41	|163|	₦1,077.62|	21.47%	|22.09%|
+|Desk|	₦167,459.93	|170	|₦985.06|	20.59%	|18.82%|
+|Phone|	₦151,722.39|	156	|₦972.58|	19.87%|	19.87%|
+
+This was one of the most useful parts of my SQL analysis because it allowed me to evaluate financial performance and operational performance together.
+
+#### Major Business Insights
+
+Based on my combined Excel, dashboard, and SQL analysis, I identified several key findings.
+
+**1. Chair is the highest-revenue product but has a high cancellation risk**
+
+Chair generated the highest revenue at ₦195,620.11.
+
+However, it also had the highest cancellation rate at 25.28%.
+
+At the same time, it had the lowest return rate at 15.73%.
+
+I therefore identified cancellation as the main area requiring attention for this product.
+
+**2. Tablet has the highest return rate**
+
+Tablet recorded the lowest cancellation rate at 18.99%, but the highest return rate at 24.02%.
+
+This suggests that Tablet orders were less likely to be cancelled but more likely to be returned.
+
+I would therefore recommend investigating the reasons behind Tablet returns.
+
+**3. Laptop has the highest AOV**
+
+Laptop had the highest average order value at ₦1,110.56.
+
+This indicates that Laptop transactions generated the highest average revenue per order among the products.
+
+However, its return rate of 22.54% means that its strong transaction value should be considered alongside its post-purchase performance.
+
+**4. Phone has the weakest revenue performance**
+
+Phone recorded the lowest:
+
+Total revenue: ₦151,722.39
+
+Total orders: 156
+
+Average order value: ₦972.58
+
+Its cancellation and return rates were both 19.87%.
+
+This suggests that Phone may require further investigation from a sales-performance perspective.
+
+**5. Credit Card has the highest cancellation rate**
+
+Credit Card transactions had the highest cancellation rate at 23.08%.
+
+I would investigate the customer journey and payment process associated with these transactions before drawing conclusions about the cause.
+
+**6. Cash has the highest return rate**
+
+Cash transactions recorded the highest return rate at 23.17%.
+
+This could be an area for further investigation, particularly around the circumstances surrounding cash-based orders and returns.
+
+**7. Instagram is the strongest referral source by revenue**
+
+Instagram generated the highest revenue among the referral sources at:
+
+₦275,285.45
+
+It also recorded 259 orders, the highest order count among the referral sources analyzed.
+
+This suggests that Instagram was an important acquisition channel within the dataset.
+
+
+### SQL Analysis
+
+#### SQL Analysis Approach
+
+After completing my exploratory analysis in Excel, I used MySQL Workbench to investigate specific business questions and validate key findings from my earlier analysis.
+
+I focused on using SQL to answer practical business questions rather than simply demonstrating SQL syntax. I used aggregation, filtering, grouping, conditional logic, and date functions to examine customer behaviour, product performance, order outcomes, payment methods, referral sources, and revenue trends.
+
+**SQL techniques I applied**
+
+|SQL Technique	| How I used it|
+|--------------|---------------|
+|COUNT()	|Counted orders and records|
+|COUNT(DISTINCT)|	Identified unique customers|
+|SUM()|	Calculated total revenue|
+|MAX()|	Identified the highest-value order|
+|ROUND()|	Rounded calculated values|
+|CASE WHEN |	Calculated cancellation and return rates |
+|WHERE|	Filtered specific order statuses|
+|GROUP BY|	Summarized data by product, payment method, referral source, etc.|
+|HAVING|	Identified customers with multiple orders|
+|ORDER BY	|Ranked results|
+|YEAR()	|Analyzed annual revenue|
+|MONTH()	|Analyzed monthly revenue|
+|MONTHNAME()|	Displayed month names|
+
+**Key SQL Queries**
+
+**1. Order Status Analysis**
+
+I first examined the distribution of orders across different order statuses.
+
+```SQL
+SELECT 
+    Order_Status,
+    COUNT(*) AS Order_Count
+FROM decodelabs_project3.`oluwapelumi sql_decodelabs`
+GROUP BY Order_Status;
+```
+
+This showed me how many orders were shipped, cancelled, returned, delivered, and pending.
+
+
+**2. Revenue by Product**
+
+I used SUM() to compare total revenue generated by each product.
+
+```SQL
+SELECT
+    Product,
+    ROUND(SUM(Total_Price), 2) AS Total_Revenue
+FROM decodelabs_project3.`oluwapelumi sql_decodelabs`
+GROUP BY Product
+ORDER BY Total_Revenue DESC;
+```
+
+Chair generated the highest revenue at ₦195,620.11.
+
+**3. Cancellation Rate**
+
+I used CASE WHEN to identify cancelled orders and COUNT(*) to determine the total number of orders within each group.
+
+```SQL
+SELECT
+    Product,
+    ROUND(
+        SUM(
+            CASE
+                WHEN Order_Status = 'Cancelled' THEN 1
+                ELSE 0
+            END
+        ) / COUNT(*) * 100,
+        2
+    ) AS Cancellation_Rate
+FROM decodelabs_project3.`oluwapelumi sql_decodelabs`
+GROUP BY Product
+ORDER BY Cancellation_Rate DESC;
+```
+
+This showed that Chair had the highest cancellation rate at 25.28%.
+
+**4. Return Rate**
+
+I used the same conditional logic to calculate the return rate for each product.
+
+```SQL
+SELECT
+    Product,
+    ROUND(
+        SUM(
+            CASE
+                WHEN Order_Status = 'Returned' THEN 1
+                ELSE 0
+            END
+        ) / COUNT(*) * 100,
+        2
+    ) AS Return_Rate
+FROM decodelabs_project3.`oluwapelumi sql_decodelabs`
+GROUP BY Product
+ORDER BY Return_Rate DESC;
+```
+
+I found that Tablet had the highest return rate at 24.02%.
+
+**5. Unique Customers**
+
+I used COUNT(DISTINCT) to avoid counting the same customer more than once.
+
+```SQL
+SELECT
+    COUNT(DISTINCT Customer_ID) AS Unique_Customers
+FROM decodelabs_project3.`oluwapelumi sql_decodelabs`;
+```
+
+This returned 1,189 unique customers from 1,200 orders.
+
+**6. Repeat Customers**
+
+I used GROUP BY and HAVING to identify customers who had placed more than one order.
+
+``` SQL
+SELECT
+    Customer_ID,
+    COUNT(*) AS Order_Count
+FROM decodelabs_project3.`oluwapelumi sql_decodelabs`
+GROUP BY Customer_ID
+HAVING COUNT(*) > 1
+ORDER BY Order_Count DESC;
+```
+
+I identified 11 customers with more than one order, with each having two orders.
+
+**7. Highest-Value Order**
+
+I used MAX() to identify the largest individual order.
+
+```SQL
+SELECT
+    MAX(Total_Price) AS Highest_Order_Value
+FROM decodelabs_project3.`oluwapelumi sql_decodelabs`;
+```
+
+The highest individual order was ₦3,456.40.
+
+**8. Payment Method and Order Status**
+
+I grouped the data by both payment method and order status.
+
+```SQL
+SELECT
+    Payment_Method,
+    Order_Status,
+    COUNT(*) AS Order_Count
+FROM decodelabs_project3.`oluwapelumi sql_decodelabs`
+GROUP BY Payment_Method, Order_Status
+ORDER BY Payment_Method, Order_Count DESC;
+```
+
+I then calculated cancellation and return rates by payment method to make the comparison fair.
+
+**9. Final Product Performance Query**
+
+I combined several metrics into one query to create a more complete view of product performance.
+
+```SQL
+SELECT
+    Product,
+    ROUND(SUM(Total_Price), 2) AS Total_Revenue,
+    COUNT(*) AS Total_Orders,
+    ROUND(SUM(Total_Price) / COUNT(*), 2) AS Average_Order_Value,
+    ROUND(
+        SUM(
+            CASE
+                WHEN Order_Status = 'Cancelled' THEN 1
+                ELSE 0
+            END
+        ) / COUNT(*) * 100,
+        2
+    ) AS Cancellation_Rate,
+    ROUND(
+        SUM(
+            CASE
+                WHEN Order_Status = 'Returned' THEN 1
+                ELSE 0
+            END
+        ) / COUNT(*) * 100,
+        2
+    ) AS Return_Rate
+FROM decodelabs_project3.`oluwapelumi sql_decodelabs`
+GROUP BY Product
+```
+ORDER BY Total_Revenue DESC;
+
+This became my main product-performance analysis because it allowed me to evaluate revenue, order volume, average order value, cancellation risk, and return risk together.
